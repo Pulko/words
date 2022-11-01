@@ -1,5 +1,5 @@
 export type Word = {
-  id: string
+  id: number
   word: string | null
   translation: string | null
 }

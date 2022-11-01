@@ -52,7 +52,7 @@ export default function Words() {
       await supabase
         .from('words')
         .insert([
-          { word, translation, id: String(lastId) },
+          { word, translation, id: lastId },
         ])
 
         setLastId(lastId+1)
