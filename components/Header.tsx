@@ -1,4 +1,5 @@
 import { useSession } from '@supabase/auth-helpers-react'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'Login', href: '/auth' },
@@ -6,22 +7,22 @@ const navigation = [
 
 const Header = () => {
   const session = useSession()
-  console.log(session)
+
   return (
     <section className="container mx-auto tracking-tight md:tracking-tighter">
       <div className="relative">
         <div className="mx-auto max-w-7xl flex py-4">
-          <a className="relative z-10 w-full font-bold text-3xl" href="/">
+          <Link className="relative z-10 w-full font-bold text-3xl whitespace-nowrap	" href="/">
             {"Words app".toUpperCase()}
-          </a>
+          </Link>
 
-          <a href="/auth" className="hover:underline">
+          <Link href="/auth" className="hover:underline whitespace-nowrap	">
             {session?.user ? (
               session?.user.email
             ) : (
               "Log in"
             )}
-          </a>
+          </Link>
         </div>
       </div>
     </section>
