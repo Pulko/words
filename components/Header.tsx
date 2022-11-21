@@ -13,14 +13,14 @@ const Header = () => {
       <div className="relative">
         <div className="mx-auto max-w-7xl flex py-4">
           <Link className="relative z-10 w-full font-bold text-3xl whitespace-nowrap	" href="/">
-            {"Words app".toUpperCase()}
+            {"Wörter".toUpperCase()}
           </Link>
 
           <Link href="/auth" className="hover:underline whitespace-nowrap	">
             {session?.user ? (
               session?.user.email
             ) : (
-              "Log in"
+              "Anmeldung".toUpperCase()
             )}
           </Link>
         </div>

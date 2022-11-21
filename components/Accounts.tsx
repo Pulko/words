@@ -92,7 +92,7 @@ export default function Account({ session }: { session: Session }) {
           className="button block mx-auto px-6 py-3 rounded bg-blue-900 hover:bg-blue-800 text-white mt-12"
           onClick={() => supabase.auth.signOut()}
         >
-          Sign Out
+          {'Ausloggen'.toUpperCase()}
         </button>
       </div>
     </div>

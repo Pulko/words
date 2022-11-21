@@ -54,9 +54,9 @@ export default function Words() {
         <div className="text-center mt-22">
           <Link
             href="/words/add"
-            className={`px-6 py-3 rounded bg-blue-900 hover:bg-blue-800 text-md font-bold text-white`}
+            className={`px-6 py-3 rounded bg-blue-900 mt-80 hover:bg-blue-800 text-md font-bold text-white`}
           >
-            {"Add new words".toUpperCase()}
+            {"füge neue Wörter hinzu".toUpperCase()}
           </Link>
         </div>
       )}

@@ -25,7 +25,7 @@ const Words = () => {
           .order('id', { ascending: false })
           .limit(1)
 
-          setLastId(Number(data?.[0]?.id || 0) + 1)
+        setLastId(Number(data?.[0]?.id || 0) + 1)
       } catch (error) {
         console.log(error)
       }
@@ -53,9 +53,9 @@ const Words = () => {
           { word, translation, id: lastId },
         ])
 
-        setLastId(lastId+1)
-        setWord("")
-        setTranslation("")
+      setLastId(lastId + 1)
+      setWord("")
+      setTranslation("")
     } catch (error) {
       console.log(error)
     }
@@ -63,11 +63,23 @@ const Words = () => {
 
   return (
     <Layout>
-      <input type="text" value={word} onChange={setText(setWord)} />
-      <input type="text" value={translation} onChange={setText(setTranslation)} />
+      <div className="mb-2">
+        <label htmlFor="word">{'Wort'.toUpperCase()}</label>
+        <div>
+          <input type="text" id="word" value={word} onChange={setText(setWord)} className="border rounded p-2 bg-white mx-2" />
+        </div>
+      </div>
 
-      <button type="button" onClick={insertRow}>
-        Add new word
+      <div className="mb-2">
+        <label htmlFor="translation">{'Übersetzung'.toUpperCase()}</label>
+        <div>
+          <input type="text" id="translation" value={translation} onChange={setText(setTranslation)} className="border rounded p-2 bg-white mx-2" />
+
+        </div>
+      </div>
+
+      <button type="button" className="px-6 py-3 rounded bg-blue-900 hover:bg-blue-800 text-white" onClick={insertRow}>
+        {'hinzufügen'.toUpperCase()}
       </button>
 
       {error && (

@@ -26,7 +26,7 @@ const Card: React.FC<Word & { onChange: () => void }> = ({ word, translation, on
           onClick={show ? onChangeWord : onShowWord}
           className={`px-6 py-3 rounded-full ${show ? 'bg-blue-900' : 'bg-emerald-900'} text-md font-bold text-white mt-5`}
         >
-          {show ? 'next' : 'show'}
+          {(show ? 'nächste' : 'anzeigen').toUpperCase()}
         </button>
       </div>
     </div>
