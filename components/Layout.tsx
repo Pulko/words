@@ -6,16 +6,16 @@ import Header from 'components/Header'
 import Container from 'components/Container'
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => (
-  <div className="bg-sky-100 bg-gradient-to-r from-indigo-200 to-pink-200 text-slate-900">
+  <div className="bg-sky-100 text-slate-900">
     <Meta />
-    <div className="min-h-screen">
       <Header />
-      <main>
+      <main className="mt-24 min-h-screen">
         <Container>
-          {children}
+          <div className="text-center">
+            {children}
+          </div>
         </Container>
       </main>
-    </div>
     <Footer />
   </div>
 )

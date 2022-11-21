@@ -1,17 +1,15 @@
-import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 
 import {
-  useUser,
   useSupabaseClient,
 } from '@supabase/auth-helpers-react'
 
 import { Database } from 'utils/database.types'
-import { Word } from 'utils/types'
 
 import Layout from 'components/Layout'
+import { withPageAuth } from '@supabase/auth-helpers-nextjs'
 
-export default function Words() {
+const Words = () => {
   const supabase = useSupabaseClient<Database>()
   const [word, setWord] = useState<string>("")
   const [translation, setTranslation] = useState<string>("")
@@ -21,7 +19,7 @@ export default function Words() {
   useEffect(() => {
     const fetchWords = async () => {
       try {
-        let { data, error } = await supabase
+        let { data } = await supabase
           .from('words')
           .select('id')
           .order('id', { ascending: false })
@@ -78,3 +76,7 @@ export default function Words() {
     </Layout>
   )
 }
+
+export const getServerSideProps = withPageAuth({ redirectTo: '/auth' })
+
+export default Words

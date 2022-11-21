@@ -9,7 +9,7 @@ const Header = () => {
   const session = useSession()
 
   return (
-    <section className="container mx-auto tracking-tight md:tracking-tighter">
+    <section className="container lg:mx-auto px-2 tracking-tight md:tracking-tighter">
       <div className="relative">
         <div className="mx-auto max-w-7xl flex py-4">
           <Link className="relative z-10 w-full font-bold text-3xl whitespace-nowrap	" href="/">

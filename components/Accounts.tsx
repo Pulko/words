@@ -81,43 +81,15 @@ export default function Account({ session }: { session: Session }) {
   }
 
   return (
-    <div className="form-widget">
+    <div className="form-widget text-center mx-auto">
       <div>
         <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session.user.email} disabled />
-      </div>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="website"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
+        <input id="email" type="text" value={session.user.email} disabled className='border rounded p-2 bg-white mx-2' />
       </div>
 
       <div>
         <button
-          className="button primary block"
-          onClick={() => updateProfile({ username, website, avatar_url })}
-          disabled={loading}
-        >
-          {loading ? 'Loading ...' : 'Update'}
-        </button>
-      </div>
-
-      <div>
-        <button
-          className="button block"
+          className="button block mx-auto px-6 py-3 rounded bg-blue-900 hover:bg-blue-800 text-white mt-12"
           onClick={() => supabase.auth.signOut()}
         >
           Sign Out

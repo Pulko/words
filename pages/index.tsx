@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useSession } from '@supabase/auth-helpers-react'
 
@@ -14,10 +13,10 @@ export default function Home() {
       </h1>
       <div className="text-center mt-12">
         <Link
-          href={session?.user ? "/words" : "/auth"}
+          href="/words"
           className="px-6 py-3 rounded bg-blue-900 hover:bg-blue-800 text-md font-bold text-white"
         >
-          {(session?.user ? "browse words" : "log in").toUpperCase()}
+          {"words".toUpperCase()}
         </Link>
       </div>
     </Layout>
